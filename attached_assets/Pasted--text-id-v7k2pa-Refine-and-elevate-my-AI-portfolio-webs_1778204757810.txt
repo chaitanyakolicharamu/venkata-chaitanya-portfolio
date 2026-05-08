@@ -1,0 +1,378 @@
+```text id="v7k2pa"
+Refine and elevate my AI portfolio website into a premium senior-level AI engineer brand identity website.
+
+IMPORTANT:
+The current portfolio already exists.
+Do NOT redesign from scratch.
+Improve the existing design, structure, branding, wording, animations, hierarchy, and professional positioning.
+
+Overall Goal:
+The website should feel like:
+- a senior Applied AI / GenAI engineer portfolio
+- enterprise-grade AI systems architect branding
+- recruiter-friendly for ALL AI roles
+- open for:
+  - Applied AI Engineer
+  - GenAI Engineer
+  - AI Platform Engineer
+  - ML Engineer
+  - AI Infrastructure Engineer
+  - AI Security Engineer
+
+The site should NOT feel:
+- overly security-only focused
+- student-level
+- cyberpunk gamer-like
+- rookie AI enthusiast portfolio
+
+It should feel:
+- experienced
+- production-focused
+- enterprise-grade
+- technically mature
+- founder-level engineering mindset
+
+==================================================
+GLOBAL DESIGN IMPROVEMENTS
+==================================================
+
+1. Remove terminal-style symbols completely:
+- Remove:
+  >_
+  terminal cursor styles
+  excessive hacker aesthetics
+
+2. Keep the aesthetic:
+- premium dark AI UI
+- cinematic
+- clean
+- modern
+- enterprise-focused
+
+3. Reduce excessive animation timing.
+The KVC intro currently takes too long.
+
+Make it:
+- faster
+- smoother
+- subtle
+- premium
+
+4. Add “LeetCode” icon beside:
+- GitHub
+- LinkedIn
+
+Top-right social area:
+GitHub | LinkedIn | LeetCode
+
+Use clean monochrome icons.
+
+==================================================
+TOP NAVIGATION
+==================================================
+
+Use this exact navbar structure:
+
+KVC
+
+About
+Flagship Project
+Projects
+Skills
+Experience
+Research
+Contact
+
+Right side:
+GitHub icon
+LinkedIn icon
+LeetCode icon
+
+Remove:
+- “Portfolio”
+- terminal aesthetics
+
+Navbar should feel:
+- minimal
+- Apple/Vercel inspired
+- sticky blur glass navbar
+
+==================================================
+KVC LOGO ANIMATION
+==================================================
+
+At the top hero section:
+Create a subtle premium animated KVC identity reveal.
+
+Animation:
+KVC
+→ smoothly expands into:
+Kolicharamu Venkata Chaitanya
+→ then collapses back into:
+KVC
+
+IMPORTANT:
+- make it FAST
+- smooth
+- elegant
+- subtle
+- not dramatic
+- total animation duration under 3 seconds
+- no giant intro splash screen
+
+This animation should happen inline near the hero heading area.
+
+Use:
+- Framer Motion
+- soft glow
+- subtle light streaks
+- elegant typography morphing
+
+No excessive particles.
+
+==================================================
+HERO SECTION
+==================================================
+
+Replace the current hero content with:
+
+Venkata Chaitanya Kolicharamu
+
+Applied AI Engineer · GenAI Engineer · AI Platform Architect
+
+Building Enterprise AI Systems, Agentic AI Platforms, Cloud-Native ML Infrastructure, and Secure LLM Applications
+
+AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, and edge AI platforms.
+
+IMPORTANT:
+- Do NOT over-focus on security.
+- Keep security as ONE strong domain.
+- Open positioning for broader AI/ML opportunities.
+
+Buttons:
+[ View Projects ]
+[ Download Resume ]
+
+Improve typography hierarchy:
+- more premium spacing
+- less clutter
+- more confidence
+- cleaner readability
+
+==================================================
+ABOUT SECTION
+==================================================
+
+Current about section feels junior.
+
+Rewrite professionally.
+
+Use this improved tone:
+
+“Venkat is an Applied AI and GenAI Engineer focused on building enterprise-grade AI platforms, scalable LLM applications, agentic workflows, secure RAG systems, and cloud-native AI infrastructure. His experience spans Generative AI engineering, AI platform architecture, edge AI systems, machine learning pipelines, and enterprise AI security frameworks.
+
+He has worked on enterprise AI initiatives involving LLM governance, prompt security, AI observability, intelligent automation, and production AI deployment strategies across cloud-native environments.”
+
+IMPORTANT:
+- Sound like an experienced engineer
+- not a student
+- not overly academic
+- not overly security-only
+
+==================================================
+METRICS SECTION
+==================================================
+
+Use:
+
+5+
+Years Overall Experience
+
+15+
+AI & ML Projects
+
+5
+APAC Recognition Awards
+
+6
+Cloud & AI Certifications
+
+==================================================
+TECHNICAL SKILLS
+==================================================
+
+Expand AI Security skills professionally.
+
+Add:
+- MITRE ATLAS
+- OWASP LLM Top 10
+- AI Governance
+- AI Risk Management
+- Secure RAG
+- AI Observability
+- LLM Evaluation
+- Guardrails
+- Model Monitoring
+
+Keep:
+- GCP
+- AWS
+- Vertex AI
+- LangChain
+- FastAPI
+- PyTorch
+- TensorFlow
+- Kubernetes
+- Docker
+- Terraform
+- Vector DBs
+- ONNX
+- OpenTelemetry
+- Grafana
+
+Structure skills like a senior AI engineer.
+
+==================================================
+EXPERIENCE SECTION
+==================================================
+
+IMPORTANT:
+Do NOT overly highlight Ford.
+
+Keep it professional and balanced.
+
+Use:
+
+Emerging Technology Research Engineer
+Ford Motor Company | 2021 – 2024
+
+Then concise bullets:
+
+- Contributed to enterprise AI and Generative AI initiatives
+- Worked on AI platform research and cloud-native AI systems
+- Evaluated enterprise GenAI security and governance solutions
+- Built AI infrastructure and intelligent automation workflows
+- Researched scalable AI deployment strategies and edge AI architectures
+
+Tone:
+- professional
+- mature
+- concise
+- not exaggerated
+
+==================================================
+HOW I THINK ABOUT AI SYSTEMS
+==================================================
+
+Current section feels beginner-level.
+
+Transform it into a premium enterprise AI architecture section.
+
+Rename section to:
+
+Enterprise AI Architecture Principles
+
+Replace the current simple chain:
+
+User → Gateway → Policy → LLM → Monitoring
+
+with a professional architecture flow:
+
+Users & Applications
+↓
+AI Gateway & Orchestration
+↓
+Policy Enforcement & Guardrails
+↓
+RAG / Tools / Agentic Workflows
+↓
+LLM Inference Layer
+↓
+Observability, Risk Monitoring & Governance
+↓
+Enterprise Security & Compliance
+
+Under it add architecture principles cards:
+
+- Scalable AI Infrastructure
+- AI Governance & Risk Controls
+- Secure Agentic Systems
+- Production-Grade Observability
+- Enterprise AI Reliability
+- Responsible AI Engineering
+
+This section should feel like:
+“senior AI platform architect”
+NOT:
+“beginner workflow diagram”
+
+==================================================
+FLAGSHIP PROJECT
+==================================================
+
+Keep PromptGuardian AI.
+
+But reduce overuse of “security” wording.
+
+Position it as:
+
+“Enterprise AI Governance & Security Platform”
+
+Improve description:
+
+“A platform for securing and governing enterprise LLM applications through prompt protection, AI risk analysis, secure RAG enforcement, observability pipelines, and policy-driven AI controls.”
+
+==================================================
+PROJECTS SECTION
+==================================================
+
+Keep:
+- PromptGuardian AI
+- RacePulse
+- WISN
+- FireSight
+- Edge GenAI IoT
+- Enterprise RAG Chatbot
+
+Improve project cards:
+- cleaner spacing
+- better hover animations
+- architecture feel
+- subtle glow borders
+- less clutter
+
+==================================================
+VISUAL IMPROVEMENTS
+==================================================
+
+Reduce:
+- visual noise
+- over-glowing
+- hacker aesthetics
+- excessive blue lines
+
+Improve:
+- whitespace
+- typography
+- motion quality
+- card hierarchy
+- visual maturity
+
+Target feel:
+- Stripe
+- Vercel
+- Palantir
+- OpenAI careers
+- enterprise AI startup founder portfolio
+
+==================================================
+FINAL MOOD
+==================================================
+
+The final website should feel like:
+
+“A senior Applied AI & GenAI engineer building production-grade enterprise AI systems.”
+
+NOT:
+“A student trying to look futuristic.”
+```
