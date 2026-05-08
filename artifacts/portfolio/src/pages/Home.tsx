@@ -72,10 +72,13 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Available for Opportunities
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-3">
               Venkata Chaitanya <br className="hidden md:block"/> Kolicharamu
             </h1>
-            <div className="text-2xl md:text-3xl font-light text-muted-foreground mb-6 h-10">
+            <p className="text-lg md:text-xl font-medium text-white/60 mb-5 tracking-wide">
+              AI Platform Architect &nbsp;·&nbsp; GenAI Security Engineer
+            </p>
+            <div className="text-xl md:text-2xl font-light text-muted-foreground mb-6 h-9">
               <TypingEffect words={[
                 "GenAI Security Engineer",
                 "Applied AI Engineer",
@@ -84,11 +87,11 @@ export default function Home() {
                 "Computer Vision Researcher"
               ]} />
             </div>
-            <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl">
-              Building Secure Enterprise GenAI Systems & Agentic AI Platforms
+            <p className="text-base md:text-lg text-muted-foreground mb-4 max-w-2xl leading-relaxed">
+              Building Secure Enterprise GenAI Systems, Agentic AI Platforms, and Cloud-Native AI Infrastructure
             </p>
-            <p className="text-sm text-muted-foreground/80 mb-10 max-w-2xl font-mono">
-              Former Ford Emerging Technology Engineer · MS Computer Science · GCP & Cloud AI · LLM Security
+            <p className="text-sm text-muted-foreground/70 mb-10 max-w-2xl leading-relaxed">
+              Former Ford Emerging Technology Engineer with 3+ years of experience in enterprise AI research, LLM security, secure RAG pipelines, cloud AI architecture, and edge AI systems.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" data-testid="button-view-projects">
@@ -125,17 +128,17 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 font-mono text-white/90">&lt;About /&gt;</h2>
+              <h2 className="text-3xl font-bold mb-6 text-white/90">About</h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Venkat is a GenAI Security & Applied AI Engineer with deep expertise in enterprise LLM systems, secure RAG pipelines, prompt injection defense, cloud-native AI architecture, and edge AI systems. Former Emerging Technology Research Engineer at Ford Motor Company. MS Computer Science. 5 Asia Pacific recognition awards.
+                Venkat is a GenAI Security and Applied AI Engineer focused on building enterprise-grade LLM platforms, secure RAG systems, prompt injection defenses, AI governance layers, and cloud-native AI infrastructure. He brings hands-on experience from Ford Motor Company, where he worked on emerging technology research, GenAI security evaluations, AI infrastructure, and enterprise technology roadmaps.
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 {[
                   { value: "5", label: "APAC Awards" },
-                  { value: "3+", label: "Years at Ford" },
-                  { value: "15+", label: "AI Projects" },
-                  { value: "6", label: "Cloud Certs" }
+                  { value: "3+", label: "Enterprise Experience" },
+                  { value: "15+", label: "AI/ML Projects" },
+                  { value: "6", label: "Cloud & AI Certifications" }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
                     <span className="text-4xl font-bold text-primary mb-1">{stat.value}</span>
@@ -170,7 +173,7 @@ export default function Home() {
               <Shield size={16} /> Flagship Project
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">PromptGuardian AI</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Enterprise-Grade GenAI Security Control Plane</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">An enterprise GenAI security control plane for protecting LLM applications from prompt injection, PII leakage, unsafe tool use, and insecure RAG workflows.</p>
           </motion.div>
 
           <div className="bg-black/60 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden">
@@ -245,7 +248,7 @@ export default function Home() {
       {/* Projects Grid */}
       <section id="projects" className="py-24 relative z-10 bg-black/40">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 font-mono text-white/90">&lt;Projects /&gt;</h2>
+          <h2 className="text-3xl font-bold mb-12 text-white/90">Projects</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -315,7 +318,7 @@ export default function Home() {
       {/* Technical Skills */}
       <section id="skills" className="py-24 relative z-10">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 font-mono text-white/90">&lt;Technical_Skills /&gt;</h2>
+          <h2 className="text-3xl font-bold mb-12 text-white/90">Technical Skills</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
@@ -368,7 +371,7 @@ export default function Home() {
       {/* Experience Timeline */}
       <section id="experience" className="py-24 relative z-10 bg-black/40 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-16 font-mono text-white/90">&lt;Experience /&gt;</h2>
+          <h2 className="text-3xl font-bold mb-16 text-white/90">Experience</h2>
           <div className="relative pl-8 md:pl-0">
             <div className="md:hidden absolute left-0 top-0 bottom-0 w-px bg-primary/20" />
             
@@ -381,9 +384,9 @@ export default function Home() {
               <div className="absolute -left-10 md:-right-3 md:left-auto top-2 w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(0,212,255,0.5)] border-4 border-background" />
               <div className="bg-white/5 border border-white/10 p-6 rounded-xl relative group hover:border-primary/50 transition-colors">
                 <div className="absolute top-6 -right-6 w-6 h-px bg-primary/20 hidden md:block group-hover:bg-primary/50 transition-colors" />
-                <span className="text-primary font-mono text-sm mb-2 block">~3 years</span>
-                <h3 className="text-2xl font-bold text-white/90 mb-1">Ford Motor Company</h3>
-                <p className="text-muted-foreground font-medium mb-4">Emerging Technology Research Engineer</p>
+                <span className="text-primary font-mono text-sm mb-2 block">2021 – 2024</span>
+                <h3 className="text-2xl font-bold text-white/90 mb-1">Emerging Technology Research Engineer</h3>
+                <p className="text-muted-foreground font-medium mb-4">Ford Motor Company</p>
                 <ul className="space-y-3">
                   {[
                     "Led GenAI Security initiatives, Gartner roadmap analysis",
@@ -445,7 +448,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-3xl font-bold mb-12 font-mono text-white/90">&lt;Research /&gt;</h2>
+              <h2 className="text-3xl font-bold mb-12 text-white/90">Research & Publications</h2>
               <div className="space-y-6">
                 {[
                   {
@@ -485,7 +488,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold mb-12 font-mono text-white/90">&lt;Certifications /&gt;</h2>
+              <h2 className="text-3xl font-bold mb-12 text-white/90">Certifications</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
                   "GCP Professional ML Engineer (In Progress)",
@@ -519,7 +522,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-6 font-mono text-white/90">&gt;_ Initialize_Contact</h2>
-              <p className="text-xl text-muted-foreground">Let's build the future of secure AI together.</p>
+              <p className="text-xl text-muted-foreground">Let's build secure, scalable, production-ready AI systems.</p>
             </div>
             
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 mb-12 relative overflow-hidden backdrop-blur-xl">
