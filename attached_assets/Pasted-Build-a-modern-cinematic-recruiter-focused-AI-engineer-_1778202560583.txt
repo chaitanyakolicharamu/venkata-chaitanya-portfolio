@@ -1,0 +1,240 @@
+Build a modern, cinematic, recruiter-focused AI engineer portfolio website for Venkata Chaitanya (Venkat) Kolicharamu, a GenAI Security & Applied AI Engineer with experience in enterprise AI systems, cloud architecture, edge AI, computer vision, and AI security research.
+
+The website should feel like a mix of:
+
+futuristic AI control center
+enterprise security dashboard
+elite engineer portfolio
+modern SaaS landing page
+
+NOT an academic/student template.
+
+The portfolio must highlight:
+
+production-grade architecture thinking
+enterprise GenAI security
+cloud-native AI systems
+agentic AI workflows
+applied ML and computer vision
+real deployment experience
+
+Style inspiration:
+
+Apple-level smoothness
+Vercel/Stripe clean UI
+dark futuristic theme
+glassmorphism + subtle neon accents
+animated backgrounds
+moving particles/network lines
+smooth scrolling
+premium typography
+cinematic transitions
+
+Use:
+
+React + Next.js
+TailwindCSS
+Framer Motion
+Three.js or particles.js for background effects
+Responsive mobile-first design
+
+Sections Required:
+
+Hero Section
+Large animated intro
+Name:
+“Venkata Chaitanya Kolicharamu”
+Tagline:
+“Building Secure Enterprise GenAI Systems & Agentic AI Platforms”
+Subheading mentioning:
+Former Ford Emerging Technology Engineer
+MS Computer Science
+GenAI Security
+GCP & Cloud AI
+Applied AI Systems
+Animated typing effect with:
+GenAI Security Engineer
+Applied AI Engineer
+AI Platform Architect
+Edge AI Builder
+Computer Vision Researcher
+
+Buttons:
+
+View Projects
+Resume
+GitHub
+LinkedIn
+Contact
+About Me
+Make this recruiter-focused, not generic.
+
+Mention:
+
+Ford experience
+enterprise AI research
+AI security focus
+LLM systems
+secure RAG
+prompt injection defense
+edge AI
+cloud-native AI systems
+GCP + AWS
+system design mindset
+
+Tone:
+confident builder, not student.
+
+Featured Flagship Project
+Create a cinematic showcase section for:
+
+“PromptGuardian AI”
+An enterprise-grade GenAI Security Control Plane.
+
+Include:
+
+architecture diagram style cards
+animated data flow
+security layers
+risk scoring
+prompt injection detection
+PII masking
+OWASP LLM Top 10 alignment
+secure RAG pipeline
+SIEM/SOAR integrations
+GCP + AWS hybrid architecture
+FastAPI + Vertex AI + LangChain + Pub/Sub + BigQuery
+
+Show:
+
+metrics
+logs
+dashboards
+architecture visuals
+deployment pipeline
+Projects Section
+Show projects as interactive premium cards.
+
+Projects:
+
+PromptGuardian AI
+RacePulse (AI-powered Formula 1 telemetry intelligence platform)
+WISN Glaucoma Detection using Wavelet Scattering Networks
+FireSight Wildfire Prediction System
+Edge GenAI IoT Architecture
+RAG-based Enterprise Chatbot
+
+Each project card must include:
+
+architecture
+tech stack
+problem solved
+deployment
+GitHub link
+live demo placeholder
+animated hover effects
+Technical Skills Section
+Make this visually impressive.
+
+Categories:
+
+GenAI & Agentic AI
+AI Security
+Cloud & DevOps
+ML & Deep Learning
+Backend Systems
+Computer Vision
+Observability & Monitoring
+
+Include:
+Python, FastAPI, LangChain, Vertex AI, GCP, AWS, Terraform, Pub/Sub, BigQuery, Docker, Kubernetes, PyTorch, TensorFlow, OpenTelemetry, Grafana, FAISS, ONNX, Streamlit, PostgreSQL, JWT, Vector DBs.
+
+Experience Timeline
+Interactive animated timeline.
+
+Highlight:
+
+Ford Motor Company
+Emerging Technology Research Engineer
+GenAI Security initiatives
+Gartner roadmap analysis
+Edge AI research
+AI infrastructure systems
+cloud deployments
+5 Asia Pacific recognition awards
+Research & Publications
+Include:
+On-Device Prompt Injection & PII Detection using Edge-based GenAI Security Filters
+Generative AI for Predictive Maintenance in Edge IoT Systems
+Computer vision & glaucoma detection work
+Certifications
+Animated certification cards:
+GCP ML Engineer Prep
+Salesforce AI Associate
+NVIDIA RAG Agents
+Azure AI Fundamentals
+Azure Fundamentals
+OCI GenAI
+Architecture Mindset Section
+A unique section showing:
+“How I Think About AI Systems”
+
+Display animated architecture blocks:
+User → AI Gateway → Policy Engine → Risk Scorer → LLM → Monitoring → SIEM
+
+Emphasize:
+
+zero trust AI
+observability
+governance
+scalable inference
+enterprise deployment
+Contact Section
+Modern terminal-style contact form.
+
+Add:
+
+GitHub
+LinkedIn
+Email
+Resume download
+Extra Premium Features
+Include:
+command palette
+AI assistant chatbot
+animated metrics counters
+glowing hover effects
+terminal-inspired UI blocks
+scroll-triggered animations
+dynamic background gradients
+subtle cyberpunk feel
+performance optimized
+
+Color Palette:
+
+black
+graphite
+deep blue
+electric cyan
+purple neon accents
+
+Overall vibe:
+“An engineer building the future of secure AI systems.”
+
+The final website should feel:
+
+enterprise-grade
+highly technical
+visually unforgettable
+recruiter optimized
+startup founder level
+not like a student portfolio
+
+If you want, I can also give:
+
+a Lovable.dev optimized prompt
+a v0.dev prompt
+a Cursor AI full-stack generation prompt
+a Next.js folder architecture
+a premium section-by-section UI wireframe
+or directly generate the complete React portfolio code.
