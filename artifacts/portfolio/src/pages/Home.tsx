@@ -38,8 +38,21 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/50 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-mono text-xl font-bold tracking-tighter">
-            <span className="text-primary">&gt;_</span>VCK
+          <div className="flex items-center gap-2">
+            <span
+              className="font-bold tracking-[0.18em] text-white"
+              style={{
+                fontSize: '1.25rem',
+                textShadow: '0 0 16px rgba(0,212,255,0.5)',
+                fontFamily: "'Inter', system-ui, sans-serif",
+              }}
+            >
+              KVC
+            </span>
+            <div className="w-px h-4 bg-white/20" />
+            <span className="text-xs font-mono text-white/30 tracking-widest hidden sm:block uppercase">
+              Portfolio
+            </span>
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
             <a href="#about" className="hover:text-primary transition-colors">About</a>

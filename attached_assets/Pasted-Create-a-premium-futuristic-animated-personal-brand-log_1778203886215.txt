@@ -1,0 +1,100 @@
+Create a premium futuristic animated personal brand logo intro for my AI portfolio website.
+
+Brand Name:
+KVC
+
+Full Name:
+Kolicharamu Venkata Chaitanya
+
+The animation should feel cinematic, intelligent, elegant, and founder-level — like the identity reveal of an elite AI systems architect.
+
+Core Animation Concept:
+The logo begins as a glowing minimal abbreviation:
+
+KVC
+
+Then the letters dynamically unfold, stretch, morph, and expand into the full name:
+
+Kolicharamu Venkata Chaitanya
+
+The transformation should feel fluid and intentional, as if the identity hidden inside “KVC” is being revealed through advanced AI motion design.
+
+After displaying the full name elegantly, the animation should collapse smoothly back into:
+
+KVC
+
+and remain in a clean glowing idle state.
+
+Animation Sequence:
+1. Fade in from black background
+2. Show glowing “KVC”
+3. Add subtle pulse/glow breathing animation
+4. Letters expand horizontally with cinematic easing
+5. Morph into:
+   “Kolicharamu Venkata Chaitanya”
+6. Add subtle futuristic particles/light streaks/data-flow effects
+7. Slight shimmer across the typography
+8. Hold full name briefly for premium reveal effect
+9. Collapse and compress smoothly back into:
+   “KVC”
+10. End in an elegant idle logo state with subtle glow
+
+Design Style:
+- Minimal
+- Premium
+- Futuristic AI aesthetic
+- Sophisticated motion graphics
+- Enterprise AI branding feel
+- Apple/Vercel/Stripe-inspired quality
+- Clean typography
+- No gaming aesthetics
+- No excessive neon overload
+- No clutter
+
+Visual Theme:
+- Dark cinematic background
+- Deep black / graphite tones
+- Electric cyan highlights
+- Soft blue neon accents
+- Smooth glow diffusion
+- Glassmorphism-inspired lighting
+- Subtle blur trails during transitions
+
+Typography:
+- Modern premium sans-serif
+- Tight clean kerning
+- Bold for “KVC”
+- Elegant thinner typography for full name reveal
+- High-end startup/founder branding feel
+
+Motion Requirements:
+- Use Framer Motion
+- Smooth spring easing
+- GPU-optimized animations
+- Responsive for desktop and mobile
+- Performance optimized
+- Seamless animation looping
+- Soft motion blur during morph transitions
+- Cinematic timing and pacing
+
+Advanced Effects:
+- Floating AI particles
+- Neural-network-inspired moving lines
+- Light streaks following expanding letters
+- Tiny digital scan/glitch shimmer (very subtle)
+- Ambient animated background gradients
+- Slight depth/parallax movement
+
+Mood:
+An elite AI Platform Architect and GenAI Security Engineer building enterprise-scale AI systems.
+
+The animation should communicate:
+- intelligence
+- precision
+- trust
+- futuristic engineering
+- enterprise AI leadership
+- founder-level technical identity
+
+The final result should feel like:
+“the opening identity sequence of a next-generation AI company founder.”
