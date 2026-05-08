@@ -1,0 +1,182 @@
+```text
+Fix the portfolio UI content, hierarchy, spacing, and experience section professionalism. Do NOT redesign the website from scratch.
+
+==================================================
+1. HERO SECTION CLEANUP
+==================================================
+
+Current issues:
+- KVC is showing twice
+- role text repeats
+- hero feels crowded
+- typing animation duplicates content
+
+Fix:
+- Keep KVC ONLY in navbar/logo
+- Remove extra KVC text inside hero
+- Remove repeated “Applied AI Engineer” typing text if it duplicates the role line
+- Keep hero clean, minimal, and premium
+
+Final Hero Layout:
+
+Open to Opportunities
+
+Venkata Chaitanya Kolicharamu
+
+Applied AI Engineer · GenAI Engineer · AI Platform Architect
+
+Building Enterprise AI Systems, Agentic AI Platforms, Cloud-Native ML Infrastructure, and Secure LLM Applications.
+
+AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, AI governance workflows, and edge AI platforms.
+
+Buttons:
+[ View Projects ]
+[ Download Resume ]
+
+Hero improvements:
+- improve whitespace
+- improve typography hierarchy
+- reduce clutter
+- make it feel senior-level
+- maintain cinematic AI aesthetic
+- remove unnecessary duplicate animations
+
+==================================================
+2. EXPERIENCE SECTION — COMPLETE PROFESSIONAL VERSION
+==================================================
+
+Completely replace the current experience section with a more mature enterprise AI engineer experience timeline.
+
+The experience should:
+- sound realistic
+- sound technically strong
+- highlight GenAI and AI infrastructure
+- include measurable enterprise-style contributions
+- avoid random generic bullet points
+- feel like a production AI engineer profile
+- not overhype
+- not feel junior
+
+Use a premium vertical timeline layout.
+
+--------------------------------------------------
+ROLE 1
+--------------------------------------------------
+
+Emerging Technology Research Engineer  
+Ford Motor Company  
+2021 – Jan 2022
+
+Tags:
+Enterprise AI · Cloud Infrastructure · Edge Systems · Technology Research
+
+Description:
+Worked on emerging technology research and enterprise innovation initiatives focused on AI adoption, infrastructure modernization, intelligent automation, and next-generation enterprise platforms.
+
+Bullets:
+- Conducted research and evaluation across emerging AI, cloud, infrastructure, and automation technologies for enterprise-scale initiatives.
+- Analyzed Gartner technology roadmaps, vendor ecosystems, and enterprise technology strategies to support long-term platform planning.
+- Contributed to proof-of-concept implementations involving edge computing, AI-driven automation, and intelligent infrastructure systems.
+- Collaborated with engineering and business teams to identify scalable AI and cloud use cases aligned with operational requirements.
+- Supported internal innovation programs focused on enterprise modernization and future-ready technology adoption.
+
+--------------------------------------------------
+ROLE 2
+--------------------------------------------------
+
+GenAI & Advanced Infrastructure Engineer  
+Ford Motor Company  
+Jan 2022 – 2024
+
+Tags:
+Generative AI · AI Infrastructure · Cloud AI · Secure LLMs · AI Governance
+
+Description:
+Contributed to enterprise Generative AI initiatives involving secure LLM workflows, AI infrastructure research, cloud-native AI systems, and governance-driven AI deployment strategies.
+
+Bullets:
+- Contributed to enterprise Generative AI initiatives across research and production-oriented environments.
+- Worked on AI platform architecture, secure LLM workflows, cloud-native AI systems, and intelligent automation pipelines.
+- Evaluated 5+ enterprise GenAI security and governance platforms aligned with OWASP LLM Top 10 and MITRE ATLAS frameworks.
+- Researched secure RAG architectures, prompt protection strategies, AI observability pipelines, and governance-focused AI deployment models.
+- Built proof-of-concept systems around prompt injection defense, AI risk analysis, and scalable AI workflow automation.
+- Supported cloud-native AI infrastructure initiatives using GCP and AWS services for scalable deployment architectures.
+- Contributed to enterprise AI discussions involving model governance, monitoring, scalability, and secure AI adoption strategies.
+- Recipient of 5 Asia Pacific Recognition Awards for engineering innovation and technology contributions.
+
+==================================================
+3. SOCIAL ICONS
+==================================================
+
+Update icons using official brand colors:
+
+Top Navbar:
+- GitHub → white/light gray
+- LinkedIn → official LinkedIn blue
+- LeetCode → white
+- no email icon in navbar
+
+Bottom Contact Section:
+- GitHub
+- LinkedIn
+- LeetCode
+- Email
+
+Use subtle hover animations and clean spacing.
+
+==================================================
+4. CONTACT SECTION
+==================================================
+
+Fix current visual issues:
+- remove highlighted text backgrounds
+- improve spacing
+- improve readability
+- cleaner alignment
+
+Use:
+
+Get in Touch
+
+Let’s build secure, scalable, production-ready AI systems.
+
+Form fields:
+- cleaner borders
+- subtle glow
+- premium enterprise SaaS styling
+- reduce excessive spacing
+
+==================================================
+5. VISUAL CLEANUP
+==================================================
+
+Improve:
+- spacing consistency
+- typography balance
+- section hierarchy
+- card alignment
+- visual maturity
+
+Reduce:
+- duplicated content
+- excessive glowing
+- clutter
+- over-animation
+- repeated role text
+
+Target Feel:
+- senior Applied AI engineer
+- enterprise GenAI architect
+- production AI systems builder
+- modern AI startup founder portfolio
+
+Design inspiration:
+- Vercel
+- Stripe
+- OpenAI
+- Palantir
+- Anthropic engineering pages
+
+The final website should feel:
+“a polished enterprise AI engineer portfolio with real-world GenAI and AI infrastructure experience.”
+```
