@@ -1,0 +1,105 @@
+Fix the hero section layout and navbar branding issues. Do not redesign the whole site.
+
+Current problems:
+1. Hero text is pushed too far left and sentences are not aligned cleanly.
+2. There is too much empty space on the right side of the hero.
+3. “View Projects” button is not working.
+4. The top-left KVC logo animation has arrows/separators and looks cluttered.
+5. Hero section feels unbalanced on desktop.
+
+Make these changes:
+
+1. Hero Layout Alignment
+- Add proper max-width and left padding for the hero content.
+- Align all hero text consistently on the same left edge.
+- Improve line spacing and paragraph width.
+- Do not let the heading touch the extreme left edge.
+- Use a balanced two-column hero layout on desktop.
+
+2. Add Right-Side Hero Visual
+Use the empty right side for a premium AI architecture visual.
+
+Create a subtle animated system diagram with nodes/cards:
+- Data Sources
+- AI Gateway
+- RAG Pipeline
+- LLM Inference
+- Risk Scoring
+- Observability
+- Cloud Deployment
+
+Make it look like a floating enterprise AI control-plane diagram.
+
+Style:
+- glassmorphism cards
+- subtle cyan glow
+- animated connecting lines
+- dark premium background
+- not too bright
+- not cluttered
+- similar to the reference image, but cleaner
+
+This should balance the hero visually and make the page look more professional.
+
+3. Fix View Projects Button
+Make the “View Projects” button scroll smoothly to the Projects section.
+
+Implementation:
+- Ensure Projects section has id="projects"
+- Button should link to "#projects"
+- Use smooth scroll behavior
+- The button must work on click
+
+4. Improve Top-Left KVC Logo Animation
+Replace the current KVC animation completely.
+
+Remove:
+- arrows
+- separators
+- symbols
+- “KVC → name → KVC” arrow text
+- flashing hacker-style cursor
+
+I only want a clean typewriter/morph animation.
+
+Animation behavior:
+- Starts as: KVC
+- Types/expands into: Kolicharamu Venkata Chaitanya
+- Pause briefly
+- Deletes/collapses back to: KVC
+- Loops slowly and smoothly
+
+Important:
+- Keep it small enough for navbar.
+- Do not make navbar height jump.
+- Use fixed-width container so layout does not shift.
+- Duration around 3–4 seconds.
+- Use Framer Motion or CSS animation.
+- Elegant, minimal, premium.
+- No arrows or extra symbols should appear at any time.
+
+Final navbar logo should look like clean text typing, not:
+KVC → Kolicharamu Venkata Chaitanya → KVC
+
+5. Hero Content Final Text
+Use this exact hero content:
+
+Venkata Chaitanya Kolicharamu
+
+Applied AI Engineer · GenAI Engineer · AI Platform Architect
+
+Building Enterprise AI Systems, Agentic AI Platforms, Cloud-Native ML Infrastructure, and Secure LLM Applications.
+
+AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, AI governance workflows, and edge AI platforms.
+
+Buttons:
+View Projects
+Download Resume
+
+6. Responsive Behavior
+- On desktop: two-column layout with text left and AI visual right.
+- On tablet/mobile: stack hero text first, visual below.
+- Keep spacing clean.
+- Avoid large empty gaps.
+
+Final result should look balanced, premium, and professional like a senior Applied AI / GenAI engineer portfolio.

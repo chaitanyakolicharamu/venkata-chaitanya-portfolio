@@ -9,6 +9,110 @@ import { SiLeetcode } from 'react-icons/si';
 import ParticleNetwork from '@/components/ParticleNetwork';
 import { Button } from '@/components/ui/button';
 
+/* ─── KVC navbar logo (crossfade typewriter, no symbols) ───────────────── */
+function KVCLogo() {
+  const [phase, setPhase] = useState<'short' | 'full'>('short');
+
+  useEffect(() => {
+    let t: ReturnType<typeof setTimeout>;
+    function tick() {
+      setPhase('full');
+      t = setTimeout(() => {
+        setPhase('short');
+        t = setTimeout(tick, 2200);
+      }, 2000);
+    }
+    t = setTimeout(tick, 1400);
+    return () => clearTimeout(t);
+  }, []);
+
+  return (
+    <div className="w-52 h-5 relative overflow-hidden flex items-center" aria-label="KVC">
+      <motion.span
+        key="short"
+        animate={{ opacity: phase === 'short' ? 1 : 0, filter: phase === 'short' ? 'blur(0px)' : 'blur(4px)' }}
+        transition={{ duration: 0.45, ease: 'easeInOut' }}
+        className="absolute left-0 font-bold tracking-[0.22em] text-white select-none whitespace-nowrap"
+        style={{ fontSize: '1.05rem', textShadow: '0 0 12px rgba(0,212,255,0.4)' }}
+      >
+        KVC
+      </motion.span>
+      <motion.span
+        key="full"
+        animate={{ opacity: phase === 'full' ? 1 : 0, filter: phase === 'full' ? 'blur(0px)' : 'blur(4px)' }}
+        transition={{ duration: 0.45, ease: 'easeInOut' }}
+        className="absolute left-0 font-light tracking-wide text-white/70 select-none whitespace-nowrap"
+        style={{ fontSize: '0.72rem' }}
+      >
+        Kolicharamu Venkata Chaitanya
+      </motion.span>
+    </div>
+  );
+}
+
+/* ─── Hero AI architecture diagram ─────────────────────────────────────── */
+const ARCH_NODES = [
+  { label: 'Data Sources', icon: Database, color: 'text-blue-400', border: 'border-blue-400/20', glow: 'rgba(96,165,250,0.15)' },
+  { label: 'AI Gateway', icon: Shield, color: 'text-primary', border: 'border-primary/25', glow: 'rgba(0,212,255,0.15)' },
+  { label: 'RAG Pipeline', icon: Layers, color: 'text-violet-400', border: 'border-violet-400/20', glow: 'rgba(167,139,250,0.15)' },
+  { label: 'LLM Inference', icon: Cpu, color: 'text-primary', border: 'border-primary/25', glow: 'rgba(0,212,255,0.15)' },
+  { label: 'Risk Scoring', icon: Activity, color: 'text-amber-400', border: 'border-amber-400/20', glow: 'rgba(251,191,36,0.15)' },
+  { label: 'Observability', icon: Eye, color: 'text-emerald-400', border: 'border-emerald-400/20', glow: 'rgba(52,211,153,0.15)' },
+  { label: 'Cloud Deployment', icon: Cloud, color: 'text-sky-400', border: 'border-sky-400/20', glow: 'rgba(56,189,248,0.15)' },
+];
+
+function AIArchDiagram() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="relative flex flex-col items-center select-none"
+    >
+      {/* Ambient glow behind diagram */}
+      <div className="absolute inset-0 bg-primary/4 blur-[80px] rounded-full pointer-events-none" />
+
+      {ARCH_NODES.map((node, i) => {
+        const Icon = node.icon;
+        return (
+          <div key={node.label} className="flex flex-col items-center w-full max-w-[220px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl border ${node.border} bg-white/4 backdrop-blur-md`}
+              style={{ boxShadow: `0 0 18px ${node.glow}` }}
+            >
+              <Icon size={14} className={`${node.color} shrink-0`} />
+              <span className="text-xs font-medium text-white/80 tracking-wide">{node.label}</span>
+
+              {/* Animated activity dot */}
+              <motion.div
+                className={`ml-auto w-1.5 h-1.5 rounded-full ${node.color.replace('text-', 'bg-')}`}
+                animate={{ opacity: [0.4, 1, 0.4] }}
+                transition={{ duration: 1.8 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+
+            {/* Connector line */}
+            {i < ARCH_NODES.length - 1 && (
+              <div className="relative w-px h-5 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/5" />
+                <motion.div
+                  className="absolute w-full bg-primary/60 rounded-full"
+                  style={{ height: '40%' }}
+                  animate={{ y: ['-100%', '300%'] }}
+                  transition={{ duration: 1.2, repeat: Infinity, ease: 'linear', delay: i * 0.15 }}
+                />
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </motion.div>
+  );
+}
+
 /* ─── Animated counter ─────────────────────────────────────────────────── */
 function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -106,12 +210,7 @@ export default function Home() {
       {/* ── Navigation ─────────────────────────────────────────────────── */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <span
-            className="font-bold tracking-[0.2em] text-white select-none"
-            style={{ fontSize: '1.1rem', textShadow: '0 0 14px rgba(0,212,255,0.4)' }}
-          >
-            KVC
-          </span>
+          <KVCLogo />
 
           <div className="hidden md:flex gap-7 text-sm font-medium text-muted-foreground">
             {[
@@ -151,57 +250,68 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ───────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-16 pb-24 overflow-hidden z-10">
-        <div className="container mx-auto px-6 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs mb-10" data-testid="badge-availability">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Open to Opportunities
+      <section className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden z-10">
+        <div className="container mx-auto px-8 md:px-12 relative">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-16 xl:gap-24 items-center">
+
+            {/* Left: text */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-xl"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs mb-10" data-testid="badge-availability">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                Open to Opportunities
+              </div>
+
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.07] mb-6">
+                Venkata Chaitanya<br />Kolicharamu
+              </h1>
+
+              <p className="text-base md:text-lg font-medium text-white/50 mb-8 tracking-wide">
+                Applied AI Engineer &nbsp;·&nbsp; GenAI Engineer &nbsp;·&nbsp; AI Platform Architect
+              </p>
+
+              <p className="text-base text-muted-foreground mb-5 leading-relaxed">
+                Building Enterprise AI Systems, Agentic AI Platforms, Cloud-Native ML Infrastructure, and Secure LLM Applications.
+              </p>
+
+              <p className="text-sm text-white/38 mb-12 leading-relaxed">
+                AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, AI governance workflows, and edge AI platforms.
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/85 rounded-lg font-medium px-7"
+                  data-testid="button-view-projects"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Projects
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/15 text-white/80 hover:bg-white/6 hover:border-white/28 rounded-lg font-medium px-7"
+                  data-testid="button-download-resume"
+                >
+                  Download Resume
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Right: AI architecture diagram — hidden on mobile */}
+            <div className="hidden lg:flex items-center justify-center w-[240px] xl:w-[260px]">
+              <AIArchDiagram />
             </div>
 
-            <h1 className="text-5xl md:text-[4.25rem] font-bold tracking-tight leading-[1.07] mb-6">
-              Venkata Chaitanya<br />Kolicharamu
-            </h1>
-
-            <p className="text-base md:text-lg font-medium text-white/50 mb-8 tracking-wide">
-              Applied AI Engineer &nbsp;·&nbsp; GenAI Engineer &nbsp;·&nbsp; AI Platform Architect
-            </p>
-
-            <p className="text-base md:text-lg text-muted-foreground mb-5 max-w-2xl leading-relaxed">
-              Building Enterprise AI Systems, Agentic AI Platforms, Cloud-Native ML Infrastructure, and Secure LLM Applications.
-            </p>
-
-            <p className="text-sm text-white/38 mb-12 max-w-2xl leading-relaxed">
-              AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, AI governance workflows, and edge AI platforms.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/85 rounded-lg font-medium px-7"
-                data-testid="button-view-projects"
-              >
-                View Projects
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/15 text-white/80 hover:bg-white/6 hover:border-white/28 rounded-lg font-medium px-7"
-                data-testid="button-download-resume"
-              >
-                Download Resume
-              </Button>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-          <ArrowRight className="rotate-90 text-white" size={18} />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-25">
+          <ArrowRight className="rotate-90 text-white" size={16} />
         </div>
       </section>
 
