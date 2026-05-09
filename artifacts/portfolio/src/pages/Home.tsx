@@ -130,18 +130,18 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-5">
-            <a href="https://github.com/venkataKolicharamu" target="_blank" rel="noreferrer"
+            <a href="https://github.com/chaitanyakolicharamu" target="_blank" rel="noopener noreferrer"
               className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
               data-testid="link-github-nav">
               <Github size={18} />
             </a>
-            <a href="https://linkedin.com/in/venkata-kolicharamu" target="_blank" rel="noreferrer"
+            <a href="https://www.linkedin.com/in/venkat017" target="_blank" rel="noopener noreferrer"
               className="transition-colors duration-200 opacity-60 hover:opacity-100"
               style={{ color: '#0A66C2' }}
               data-testid="link-linkedin-nav">
               <Linkedin size={18} />
             </a>
-            <a href="https://leetcode.com/venkataKolicharamu" target="_blank" rel="noreferrer"
+            <a href="https://leetcode.com/u/venkat017/" target="_blank" rel="noopener noreferrer"
               className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
               data-testid="link-leetcode-nav">
               <SiLeetcode size={18} />
@@ -654,12 +654,12 @@ export default function Home() {
 
             <div className="flex justify-center gap-4 mb-10">
               {[
-                { href: 'https://github.com/venkataKolicharamu', icon: Github, label: 'GitHub', color: 'text-white' },
-                { href: 'https://linkedin.com/in/venkata-kolicharamu', icon: Linkedin, label: 'LinkedIn', color: '' },
-                { href: 'https://leetcode.com/venkataKolicharamu', icon: SiLeetcode as typeof Github, label: 'LeetCode', color: 'text-white' },
-                { href: 'mailto:venkat@example.com', icon: Mail, label: 'Email', color: 'text-white' },
+                { href: 'https://github.com/chaitanyakolicharamu', icon: Github, label: 'GitHub', color: 'text-white' },
+                { href: 'https://www.linkedin.com/in/venkat017', icon: Linkedin, label: 'LinkedIn', color: '' },
+                { href: 'https://leetcode.com/u/venkat017/', icon: SiLeetcode as typeof Github, label: 'LeetCode', color: 'text-white' },
+                { href: 'mailto:venkatkolicharamu@gmail.com', icon: Mail, label: 'Email', color: 'text-white' },
               ].map(({ href, icon: Icon, label, color }) => (
-                <a key={label} href={href} target={label !== 'Email' ? '_blank' : undefined} rel="noreferrer"
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                   className={`w-11 h-11 rounded-xl bg-white/4 border border-white/8 flex items-center justify-center hover:bg-white/8 hover:border-white/18 transition-all duration-200 ${color}`}
                   style={label === 'LinkedIn' ? { color: '#0A66C2' } : {}}
                   data-testid={`link-${label.toLowerCase()}-footer`}>
