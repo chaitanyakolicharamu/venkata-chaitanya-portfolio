@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
 import {
   Github, Linkedin, Mail, ArrowRight,
   Shield, Database, Cloud, Cpu, FileText,
@@ -50,63 +50,156 @@ function KVCLogo() {
   );
 }
 
-/* ─── Hero AI architecture diagram ─────────────────────────────────────── */
-const ARCH_NODES = [
-  { label: 'Data Sources', icon: Database, color: 'text-blue-400', border: 'border-blue-400/20', glow: 'rgba(96,165,250,0.15)' },
-  { label: 'AI Gateway', icon: Shield, color: 'text-primary', border: 'border-primary/25', glow: 'rgba(0,212,255,0.15)' },
-  { label: 'RAG Pipeline', icon: Layers, color: 'text-violet-400', border: 'border-violet-400/20', glow: 'rgba(167,139,250,0.15)' },
-  { label: 'LLM Inference', icon: Cpu, color: 'text-primary', border: 'border-primary/25', glow: 'rgba(0,212,255,0.15)' },
-  { label: 'Risk Scoring', icon: Activity, color: 'text-amber-400', border: 'border-amber-400/20', glow: 'rgba(251,191,36,0.15)' },
-  { label: 'Observability', icon: Eye, color: 'text-emerald-400', border: 'border-emerald-400/20', glow: 'rgba(52,211,153,0.15)' },
-  { label: 'Cloud Deployment', icon: Cloud, color: 'text-sky-400', border: 'border-sky-400/20', glow: 'rgba(56,189,248,0.15)' },
+/* ─── AI Intelligence Core — orbital hero visual ────────────────────────── */
+const ORBIT_NODES: { label: string; startAngle: number; duration: number; color: string; radius: number }[] = [
+  { label: 'Generative AI',      startAngle: 0,   duration: 22, color: '#00d4ff', radius: 118 },
+  { label: 'Machine Learning',   startAngle: 45,  duration: 29, color: '#a78bfa', radius: 125 },
+  { label: 'Cloud AI',           startAngle: 90,  duration: 17, color: '#38bdf8', radius: 115 },
+  { label: 'RAG Systems',        startAngle: 135, duration: 25, color: '#34d399', radius: 120 },
+  { label: 'Agentic Workflows',  startAngle: 180, duration: 31, color: '#818cf8', radius: 122 },
+  { label: 'Edge AI',            startAngle: 225, duration: 19, color: '#c084fc', radius: 116 },
+  { label: 'AI Governance',      startAngle: 270, duration: 26, color: '#fbbf24', radius: 119 },
+  { label: 'Observability',      startAngle: 315, duration: 21, color: '#34d399', radius: 114 },
 ];
 
-function AIArchDiagram() {
+function OrbitalNode({ label, startAngle, duration, color, radius }: (typeof ORBIT_NODES)[number]) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const t0 = useRef<number | null>(null);
+
+  useAnimationFrame((t) => {
+    if (t0.current === null) t0.current = t;
+    const elapsed = (t - t0.current) / 1000;
+    const angle = (startAngle + (elapsed / duration) * 360) * (Math.PI / 180);
+    x.set(Math.cos(angle) * radius);
+    y.set(Math.sin(angle) * radius);
+  });
+
+  return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <motion.div
+        style={{ x, y }}
+        className="px-2.5 py-[5px] rounded-full text-[10px] font-medium whitespace-nowrap"
+        animate={{ opacity: [0.75, 1, 0.75] }}
+        transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut' }}
+        // @ts-ignore — style prop accepts string values here
+        // eslint-disable-next-line react/no-unknown-property
+      >
+        <span
+          style={{
+            color,
+            background: 'rgba(0,0,0,0.55)',
+            border: `1px solid ${color}30`,
+            boxShadow: `0 0 12px ${color}18, inset 0 1px 0 rgba(255,255,255,0.05)`,
+            backdropFilter: 'blur(8px)',
+            borderRadius: '999px',
+            padding: '4px 10px',
+            display: 'inline-block',
+          }}
+        >
+          {label}
+        </span>
+      </motion.div>
+    </div>
+  );
+}
+
+function AIIntelligenceCore() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="relative flex flex-col items-center select-none"
+      initial={{ opacity: 0, scale: 0.82 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.3, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className="relative select-none"
+      style={{ width: 320, height: 320 }}
     >
-      {/* Ambient glow behind diagram */}
-      <div className="absolute inset-0 bg-primary/4 blur-[80px] rounded-full pointer-events-none" />
+      {/* Deep ambient glow */}
+      <div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          inset: '-20%',
+          background: 'radial-gradient(ellipse at center, rgba(0,212,255,0.07) 0%, rgba(139,92,246,0.05) 50%, transparent 70%)',
+          filter: 'blur(30px)',
+        }}
+      />
 
-      {ARCH_NODES.map((node, i) => {
-        const Icon = node.icon;
+      {/* Orbit ring — subtle ellipse showing the path */}
+      <div
+        className="absolute rounded-full border border-white/[0.04] pointer-events-none"
+        style={{ inset: '14%' }}
+      />
+      <div
+        className="absolute rounded-full border border-white/[0.03] pointer-events-none"
+        style={{ inset: '10%' }}
+      />
+
+      {/* Orbiting node pills */}
+      {ORBIT_NODES.map((node) => (
+        <OrbitalNode key={node.label} {...node} />
+      ))}
+
+      {/* Centre orb */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        {/* Expanding pulse rings */}
+        {[0, 0.85, 1.7].map((delay, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full border border-primary/25"
+            style={{ width: 56, height: 56 }}
+            animate={{ scale: [1, 3.2], opacity: [0.45, 0] }}
+            transition={{ duration: 2.8, delay, repeat: Infinity, ease: 'easeOut' }}
+          />
+        ))}
+
+        {/* Outer halo ring */}
+        <div
+          className="absolute rounded-full border border-primary/15"
+          style={{
+            width: 68, height: 68,
+            boxShadow: '0 0 20px rgba(0,212,255,0.08)',
+          }}
+        />
+
+        {/* Core sphere */}
+        <div
+          className="relative rounded-full"
+          style={{
+            width: 52, height: 52,
+            background: 'radial-gradient(circle at 38% 32%, rgba(0,212,255,0.85), rgba(99,102,241,0.6) 55%, rgba(139,92,246,0.4))',
+            boxShadow: '0 0 28px rgba(0,212,255,0.55), 0 0 56px rgba(0,212,255,0.18), 0 0 4px rgba(255,255,255,0.1) inset',
+          }}
+        >
+          {/* Inner highlight */}
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: 18, height: 18,
+              top: 8, left: 9,
+              background: 'radial-gradient(circle, rgba(255,255,255,0.35), transparent)',
+              filter: 'blur(3px)',
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Floating ambient particles */}
+      {Array.from({ length: 10 }).map((_, i) => {
+        const angle = (i / 10) * Math.PI * 2;
+        const r = 80 + (i % 3) * 28;
         return (
-          <div key={node.label} className="flex flex-col items-center w-full max-w-[220px]">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl border ${node.border} bg-white/4 backdrop-blur-md`}
-              style={{ boxShadow: `0 0 18px ${node.glow}` }}
-            >
-              <Icon size={14} className={`${node.color} shrink-0`} />
-              <span className="text-xs font-medium text-white/80 tracking-wide">{node.label}</span>
-
-              {/* Animated activity dot */}
-              <motion.div
-                className={`ml-auto w-1.5 h-1.5 rounded-full ${node.color.replace('text-', 'bg-')}`}
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 1.8 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            </motion.div>
-
-            {/* Connector line */}
-            {i < ARCH_NODES.length - 1 && (
-              <div className="relative w-px h-5 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/5" />
-                <motion.div
-                  className="absolute w-full bg-primary/60 rounded-full"
-                  style={{ height: '40%' }}
-                  animate={{ y: ['-100%', '300%'] }}
-                  transition={{ duration: 1.2, repeat: Infinity, ease: 'linear', delay: i * 0.15 }}
-                />
-              </div>
-            )}
-          </div>
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 rounded-full pointer-events-none"
+            style={{
+              left: `calc(50% + ${Math.cos(angle) * r}px)`,
+              top: `calc(50% + ${Math.sin(angle) * r}px)`,
+              backgroundColor: ORBIT_NODES[i % ORBIT_NODES.length].color,
+              opacity: 0.25,
+              transform: 'translate(-50%, -50%)',
+            }}
+            animate={{ opacity: [0.12, 0.4, 0.12], scale: [0.8, 1.3, 0.8] }}
+            transition={{ duration: 2.5 + i * 0.35, repeat: Infinity, ease: 'easeInOut' }}
+          />
         );
       })}
     </motion.div>
@@ -302,9 +395,9 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right: AI architecture diagram — hidden on mobile */}
-            <div className="hidden lg:flex items-center justify-center w-[240px] xl:w-[260px]">
-              <AIArchDiagram />
+            {/* Right: AI Intelligence Core — hidden on mobile */}
+            <div className="hidden lg:flex items-center justify-center w-[320px] xl:w-[360px] shrink-0">
+              <AIIntelligenceCore />
             </div>
 
           </div>
