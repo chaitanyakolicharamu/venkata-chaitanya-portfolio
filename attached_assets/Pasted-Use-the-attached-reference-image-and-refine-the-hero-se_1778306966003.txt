@@ -1,0 +1,154 @@
+Use the attached reference image and refine the hero section visual + navbar typing animation to make the page feel more balanced, premium, and meaningful.
+
+Current improvements are good, but there are still several issues that need refinement.
+
+IMPORTANT:
+I am attaching a reference image.
+Use it only as inspiration for spacing, scale, alignment, and premium feel.
+Do NOT copy it exactly.
+
+==================================================
+1. RIGHT-SIDE HERO VISUAL IMPROVEMENTS
+==================================================
+
+Current issues:
+- The AI orbit visual is too small.
+- It is placed too far to the right.
+- There is too much empty space between hero text and the animation.
+- The visual feels disconnected from the content.
+- Some labels are not relevant.
+
+Fix:
+- Make the AI visual larger and more central.
+- Move it closer to the hero text.
+- Balance the overall hero composition.
+- Reduce the empty gap between left and right sections.
+- Scale the visual so it occupies the right side properly.
+
+==================================================
+2. MAKE THE VISUAL MEANINGFUL
+==================================================
+
+The animation should tell a story about modern Generative AI systems and workflows.
+
+Instead of random orbit labels, create a meaningful rotating ecosystem around the AI core.
+
+Remove:
+- Edge AI
+- unrelated/random labels
+
+Use ONLY relevant modern GenAI ecosystem concepts such as:
+- Foundation Models
+- RAG Systems
+- Agentic Workflows
+- LLM Inference
+- AI Governance
+- Prompt Engineering
+- Vector Databases
+- AI Observability
+- Fine-Tuning
+- Cloud AI
+- Model Evaluation
+- Guardrails
+
+Animation idea:
+The concepts should rotate/orbit smoothly around the center in a way that visually represents the evolution and ecosystem of modern GenAI systems.
+
+It should feel:
+- intelligent
+- futuristic
+- meaningful
+- elegant
+- dynamic but subtle
+
+==================================================
+3. IMPROVE THE CENTER AI CORE
+==================================================
+
+Enhance the center glowing orb/core:
+- smoother glow
+- layered gradients
+- pulse effect
+- subtle energy rings
+- cinematic lighting
+- depth/parallax feel
+
+Do NOT make it flashy or gamer-like.
+
+Target aesthetic:
+OpenAI / Anthropic / Vercel / futuristic enterprise AI UI.
+
+==================================================
+4. NAVBAR KVC TYPEWRITER ANIMATION FIX
+==================================================
+
+Current issues:
+- Full name text is too small.
+- Font style does not match the rest of the site.
+- Animation does not type letter-by-letter naturally.
+- Typography feels disconnected from hero typography.
+
+Fix:
+- Use the same premium font family used across the site.
+- Improve font weight and spacing.
+- Make animation cleaner and smoother.
+- Use a real typewriter effect:
+  KVC
+  → types letter-by-letter into:
+  Kolicharamu Venkata Chaitanya
+  → pauses
+  → deletes back to:
+  KVC
+
+Requirements:
+- smooth typing speed
+- elegant cursor
+- no arrows
+- no symbols
+- no layout shifting
+- fixed-width navbar area
+- premium subtle animation
+- readable font size
+
+The navbar branding should feel:
+- premium
+- modern
+- founder-level
+- minimal
+- integrated with the rest of the UI
+
+==================================================
+5. HERO SECTION BALANCE
+==================================================
+
+Refine spacing:
+- hero text should not feel isolated
+- animation and text should feel connected
+- improve alignment between left and right sections
+- avoid giant empty spaces
+- maintain clean whitespace
+
+Desktop:
+- balanced 2-column layout
+
+Mobile:
+- stack hero text first
+- visual below
+- maintain spacing consistency
+
+==================================================
+6. FINAL FEEL
+==================================================
+
+The final hero section should feel like:
+- a premium AI startup landing page
+- a senior Applied AI / GenAI engineer portfolio
+- cinematic but professional
+- visually memorable
+- modern enterprise AI aesthetic
+
+NOT:
+- gamer UI
+- random orbit animation
+- disconnected floating objects
+- cluttered futuristic effects

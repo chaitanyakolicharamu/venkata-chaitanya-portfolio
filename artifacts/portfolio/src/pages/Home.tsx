@@ -9,57 +9,75 @@ import { SiLeetcode } from 'react-icons/si';
 import ParticleNetwork from '@/components/ParticleNetwork';
 import { Button } from '@/components/ui/button';
 
-/* ─── KVC navbar logo (crossfade typewriter, no symbols) ───────────────── */
+/* ─── KVC navbar logo — real letter-by-letter typewriter ───────────────── */
+const TYPEWRITER_FULL = 'Kolicharamu Venkata Chaitanya';
+
 function KVCLogo() {
-  const [phase, setPhase] = useState<'short' | 'full'>('short');
+  const [displayed, setDisplayed] = useState('');
+  const [phase, setPhase] = useState<'wait' | 'typing' | 'hold' | 'deleting'>('wait');
+  const [cursorOn, setCursorOn] = useState(true);
+
+  useEffect(() => {
+    const id = setInterval(() => setCursorOn((c) => !c), 520);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     let t: ReturnType<typeof setTimeout>;
-    function tick() {
-      setPhase('full');
-      t = setTimeout(() => {
-        setPhase('short');
-        t = setTimeout(tick, 2200);
-      }, 2000);
+    if (phase === 'wait') {
+      t = setTimeout(() => setPhase('typing'), 1600);
+    } else if (phase === 'typing') {
+      if (displayed.length < TYPEWRITER_FULL.length) {
+        t = setTimeout(() => setDisplayed(TYPEWRITER_FULL.slice(0, displayed.length + 1)), 55);
+      } else {
+        setPhase('hold');
+      }
+    } else if (phase === 'hold') {
+      t = setTimeout(() => setPhase('deleting'), 2800);
+    } else if (phase === 'deleting') {
+      if (displayed.length > 0) {
+        t = setTimeout(() => setDisplayed((d) => d.slice(0, -1)), 38);
+      } else {
+        setPhase('wait');
+      }
     }
-    t = setTimeout(tick, 1400);
     return () => clearTimeout(t);
-  }, []);
+  }, [phase, displayed]);
 
   return (
-    <div className="w-52 h-5 relative overflow-hidden flex items-center" aria-label="KVC">
-      <motion.span
-        key="short"
-        animate={{ opacity: phase === 'short' ? 1 : 0, filter: phase === 'short' ? 'blur(0px)' : 'blur(4px)' }}
-        transition={{ duration: 0.45, ease: 'easeInOut' }}
-        className="absolute left-0 font-bold tracking-[0.22em] text-white select-none whitespace-nowrap"
-        style={{ fontSize: '1.05rem', textShadow: '0 0 12px rgba(0,212,255,0.4)' }}
+    <div className="flex items-center select-none whitespace-nowrap" aria-label="KVC">
+      <span
+        className="font-bold tracking-[0.2em] text-white"
+        style={{ fontSize: '1rem', textShadow: '0 0 14px rgba(0,212,255,0.38)' }}
       >
         KVC
-      </motion.span>
-      <motion.span
-        key="full"
-        animate={{ opacity: phase === 'full' ? 1 : 0, filter: phase === 'full' ? 'blur(0px)' : 'blur(4px)' }}
-        transition={{ duration: 0.45, ease: 'easeInOut' }}
-        className="absolute left-0 font-light tracking-wide text-white/70 select-none whitespace-nowrap"
-        style={{ fontSize: '0.72rem' }}
+      </span>
+      {displayed.length > 0 && (
+        <span className="text-white/20 mx-2 font-thin text-base leading-none">|</span>
+      )}
+      <span className="font-light text-white/65 tracking-wide" style={{ fontSize: '0.78rem' }}>
+        {displayed}
+      </span>
+      <span
+        className="ml-px font-thin text-primary leading-none"
+        style={{ fontSize: '0.9rem', opacity: cursorOn ? 1 : 0, transition: 'opacity 0.05s' }}
       >
-        Kolicharamu Venkata Chaitanya
-      </motion.span>
+        |
+      </span>
     </div>
   );
 }
 
 /* ─── AI Intelligence Core — orbital hero visual ────────────────────────── */
 const ORBIT_NODES: { label: string; startAngle: number; duration: number; color: string; radius: number }[] = [
-  { label: 'Generative AI',      startAngle: 0,   duration: 22, color: '#00d4ff', radius: 118 },
-  { label: 'Machine Learning',   startAngle: 45,  duration: 29, color: '#a78bfa', radius: 125 },
-  { label: 'Cloud AI',           startAngle: 90,  duration: 17, color: '#38bdf8', radius: 115 },
-  { label: 'RAG Systems',        startAngle: 135, duration: 25, color: '#34d399', radius: 120 },
-  { label: 'Agentic Workflows',  startAngle: 180, duration: 31, color: '#818cf8', radius: 122 },
-  { label: 'Edge AI',            startAngle: 225, duration: 19, color: '#c084fc', radius: 116 },
-  { label: 'AI Governance',      startAngle: 270, duration: 26, color: '#fbbf24', radius: 119 },
-  { label: 'Observability',      startAngle: 315, duration: 21, color: '#34d399', radius: 114 },
+  { label: 'Foundation Models',  startAngle: 0,   duration: 38, color: '#00d4ff', radius: 172 },
+  { label: 'RAG Systems',        startAngle: 45,  duration: 44, color: '#a78bfa', radius: 178 },
+  { label: 'Agentic Workflows',  startAngle: 90,  duration: 36, color: '#38bdf8', radius: 170 },
+  { label: 'LLM Inference',      startAngle: 135, duration: 42, color: '#34d399', radius: 175 },
+  { label: 'AI Governance',      startAngle: 180, duration: 40, color: '#818cf8', radius: 173 },
+  { label: 'Prompt Engineering', startAngle: 225, duration: 35, color: '#c084fc', radius: 169 },
+  { label: 'Vector Databases',   startAngle: 270, duration: 41, color: '#fbbf24', radius: 176 },
+  { label: 'AI Observability',   startAngle: 315, duration: 37, color: '#6ee7b7', radius: 171 },
 ];
 
 function OrbitalNode({ label, startAngle, duration, color, radius }: (typeof ORBIT_NODES)[number]) {
@@ -79,58 +97,93 @@ function OrbitalNode({ label, startAngle, duration, color, radius }: (typeof ORB
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
       <motion.div
         style={{ x, y }}
-        className="px-2.5 py-[5px] rounded-full text-[10px] font-medium whitespace-nowrap"
-        animate={{ opacity: [0.75, 1, 0.75] }}
-        transition={{ duration: 3 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut' }}
-        // @ts-ignore — style prop accepts string values here
-        // eslint-disable-next-line react/no-unknown-property
+        animate={{ opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <span
+        <div
           style={{
             color,
-            background: 'rgba(0,0,0,0.55)',
-            border: `1px solid ${color}30`,
-            boxShadow: `0 0 12px ${color}18, inset 0 1px 0 rgba(255,255,255,0.05)`,
-            backdropFilter: 'blur(8px)',
+            background: 'rgba(4,6,15,0.72)',
+            border: `1px solid ${color}28`,
+            boxShadow: `0 0 14px ${color}16, inset 0 1px 0 rgba(255,255,255,0.06)`,
+            backdropFilter: 'blur(12px)',
             borderRadius: '999px',
-            padding: '4px 10px',
-            display: 'inline-block',
+            padding: '5px 13px',
+            fontSize: '10.5px',
+            fontWeight: 500,
+            letterSpacing: '0.03em',
+            whiteSpace: 'nowrap',
           }}
         >
           {label}
-        </span>
+        </div>
       </motion.div>
     </div>
   );
 }
 
 function AIIntelligenceCore() {
+  const SIZE = 480;
+  const CORE = 72;
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.82 }}
+      initial={{ opacity: 0, scale: 0.78 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.3, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="relative select-none"
-      style={{ width: 320, height: 320 }}
+      transition={{ duration: 1.4, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="relative select-none shrink-0"
+      style={{ width: SIZE, height: SIZE }}
     >
-      {/* Deep ambient glow */}
+      {/* Wide ambient field */}
       <div
-        className="absolute rounded-full pointer-events-none"
+        className="absolute pointer-events-none"
         style={{
-          inset: '-20%',
-          background: 'radial-gradient(ellipse at center, rgba(0,212,255,0.07) 0%, rgba(139,92,246,0.05) 50%, transparent 70%)',
-          filter: 'blur(30px)',
+          inset: '-15%',
+          background: 'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0,212,255,0.055) 0%, rgba(99,102,241,0.04) 45%, transparent 70%)',
+          filter: 'blur(24px)',
         }}
       />
 
-      {/* Orbit ring — subtle ellipse showing the path */}
-      <div
-        className="absolute rounded-full border border-white/[0.04] pointer-events-none"
-        style={{ inset: '14%' }}
+      {/* Orbital track rings */}
+      {[0.72, 0.76].map((f, i) => (
+        <div
+          key={i}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            border: `1px solid rgba(255,255,255,${i === 0 ? 0.04 : 0.025})`,
+            inset: `${(1 - f) * 50}%`,
+          }}
+        />
+      ))}
+
+      {/* Slow-rotating accent ring */}
+      <motion.div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          inset: '11%',
+          border: '1px solid transparent',
+          backgroundImage: 'conic-gradient(from 0deg, rgba(0,212,255,0.18), transparent 40%, rgba(139,92,246,0.14), transparent 80%, rgba(0,212,255,0.18))',
+          backgroundOrigin: 'border-box',
+          WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+        }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
       />
-      <div
-        className="absolute rounded-full border border-white/[0.03] pointer-events-none"
-        style={{ inset: '10%' }}
+      <motion.div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          inset: '13%',
+          border: '1px solid transparent',
+          backgroundImage: 'conic-gradient(from 180deg, rgba(139,92,246,0.12), transparent 50%, rgba(0,212,255,0.10), transparent 90%)',
+          backgroundOrigin: 'border-box',
+          WebkitMask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+        }}
+        animate={{ rotate: -360 }}
+        transition={{ duration: 36, repeat: Infinity, ease: 'linear' }}
       />
 
       {/* Orbiting node pills */}
@@ -140,65 +193,98 @@ function AIIntelligenceCore() {
 
       {/* Centre orb */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {/* Expanding pulse rings */}
-        {[0, 0.85, 1.7].map((delay, i) => (
+        {/* Pulse waves */}
+        {[0, 0.9, 1.8, 2.7].map((delay, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border border-primary/25"
-            style={{ width: 56, height: 56 }}
-            animate={{ scale: [1, 3.2], opacity: [0.45, 0] }}
-            transition={{ duration: 2.8, delay, repeat: Infinity, ease: 'easeOut' }}
+            className="absolute rounded-full"
+            style={{
+              width: CORE, height: CORE,
+              border: `1px solid rgba(0,212,255,${0.3 - i * 0.05})`,
+            }}
+            animate={{ scale: [1, 4.2 + i * 0.4], opacity: [0.5, 0] }}
+            transition={{ duration: 3.2, delay, repeat: Infinity, ease: 'easeOut' }}
           />
         ))}
 
-        {/* Outer halo ring */}
-        <div
-          className="absolute rounded-full border border-primary/15"
-          style={{
-            width: 68, height: 68,
-            boxShadow: '0 0 20px rgba(0,212,255,0.08)',
-          }}
-        />
+        {/* Static halo rings */}
+        {[1.18, 1.38, 1.62].map((scale, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              width: CORE * scale,
+              height: CORE * scale,
+              border: `1px solid rgba(${i === 0 ? '0,212,255' : i === 1 ? '99,102,241' : '139,92,246'},${0.12 - i * 0.03})`,
+              boxShadow: i === 0 ? '0 0 20px rgba(0,212,255,0.06)' : 'none',
+            }}
+          />
+        ))}
 
         {/* Core sphere */}
         <div
-          className="relative rounded-full"
+          className="relative rounded-full z-10"
           style={{
-            width: 52, height: 52,
-            background: 'radial-gradient(circle at 38% 32%, rgba(0,212,255,0.85), rgba(99,102,241,0.6) 55%, rgba(139,92,246,0.4))',
-            boxShadow: '0 0 28px rgba(0,212,255,0.55), 0 0 56px rgba(0,212,255,0.18), 0 0 4px rgba(255,255,255,0.1) inset',
+            width: CORE, height: CORE,
+            background: [
+              'radial-gradient(circle at 36% 30%,',
+              '  rgba(200,240,255,0.95) 0%,',
+              '  rgba(0,212,255,0.82) 18%,',
+              '  rgba(56,130,246,0.7) 42%,',
+              '  rgba(99,102,241,0.55) 65%,',
+              '  rgba(139,92,246,0.38) 85%,',
+              '  rgba(30,10,60,0.6) 100%)',
+            ].join(''),
+            boxShadow: [
+              '0 0 0 1px rgba(0,212,255,0.22)',
+              '0 0 22px rgba(0,212,255,0.65)',
+              '0 0 50px rgba(0,212,255,0.28)',
+              '0 0 90px rgba(0,212,255,0.12)',
+              '0 0 130px rgba(99,102,241,0.1)',
+            ].join(', '),
           }}
         >
-          {/* Inner highlight */}
+          {/* Lens highlight */}
           <div
             className="absolute rounded-full"
             style={{
-              width: 18, height: 18,
-              top: 8, left: 9,
-              background: 'radial-gradient(circle, rgba(255,255,255,0.35), transparent)',
-              filter: 'blur(3px)',
+              width: '42%', height: '35%',
+              top: '12%', left: '14%',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.55), rgba(255,255,255,0.08) 60%, transparent)',
+              filter: 'blur(2px)',
+            }}
+          />
+          {/* Bottom rim light */}
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: '60%', height: '20%',
+              bottom: '10%', left: '20%',
+              background: 'radial-gradient(ellipse, rgba(139,92,246,0.4), transparent)',
+              filter: 'blur(4px)',
             }}
           />
         </div>
       </div>
 
-      {/* Floating ambient particles */}
-      {Array.from({ length: 10 }).map((_, i) => {
-        const angle = (i / 10) * Math.PI * 2;
-        const r = 80 + (i % 3) * 28;
+      {/* Ambient micro-particles */}
+      {Array.from({ length: 14 }).map((_, i) => {
+        const angle = (i / 14) * Math.PI * 2;
+        const r = 90 + (i % 4) * 22;
         return (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 rounded-full pointer-events-none"
+            className="absolute rounded-full pointer-events-none"
             style={{
+              width: i % 3 === 0 ? 2 : 1.5,
+              height: i % 3 === 0 ? 2 : 1.5,
               left: `calc(50% + ${Math.cos(angle) * r}px)`,
               top: `calc(50% + ${Math.sin(angle) * r}px)`,
               backgroundColor: ORBIT_NODES[i % ORBIT_NODES.length].color,
-              opacity: 0.25,
               transform: 'translate(-50%, -50%)',
             }}
-            animate={{ opacity: [0.12, 0.4, 0.12], scale: [0.8, 1.3, 0.8] }}
-            transition={{ duration: 2.5 + i * 0.35, repeat: Infinity, ease: 'easeInOut' }}
+            animate={{ opacity: [0.1, 0.45, 0.1], scale: [0.6, 1.4, 0.6] }}
+            transition={{ duration: 2.8 + i * 0.28, repeat: Infinity, ease: 'easeInOut' }}
           />
         );
       })}
@@ -345,7 +431,7 @@ export default function Home() {
       {/* ── Hero ───────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden z-10">
         <div className="container mx-auto px-8 md:px-12 relative">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-16 xl:gap-24 items-center">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-8 xl:gap-10 items-center">
 
             {/* Left: text */}
             <motion.div
@@ -372,7 +458,7 @@ export default function Home() {
               </p>
 
               <p className="text-sm text-white/38 mb-12 leading-relaxed">
-                AI engineer with 5+ years of overall technology experience spanning enterprise AI research, Generative AI systems, applied machine learning, cloud AI infrastructure, secure RAG architectures, AI governance workflows, and edge AI platforms.
+                AI engineer with 5+ years of experience spanning enterprise AI research, Generative AI systems, agentic workflows, cloud-native ML infrastructure, secure RAG architectures, and AI governance.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -396,7 +482,7 @@ export default function Home() {
             </motion.div>
 
             {/* Right: AI Intelligence Core — hidden on mobile */}
-            <div className="hidden lg:flex items-center justify-center w-[320px] xl:w-[360px] shrink-0">
+            <div className="hidden lg:flex items-center justify-center overflow-visible">
               <AIIntelligenceCore />
             </div>
 
