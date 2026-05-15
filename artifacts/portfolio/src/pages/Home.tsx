@@ -55,7 +55,7 @@ function KVCLogo() {
       {displayed.length > 0 && (
         <span className="text-white/20 mx-2 font-thin text-base leading-none">|</span>
       )}
-      <span className="font-light text-white/65 tracking-wide" style={{ fontSize: '0.78rem' }}>
+      <span className="font-medium text-white/70 tracking-[0.02em]" style={{ fontSize: '0.92rem' }}>
         {displayed}
       </span>
       <span
@@ -388,45 +388,67 @@ export default function Home() {
 
       {/* ── Navigation ─────────────────────────────────────────────────── */}
       <nav className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-white/5">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <KVCLogo />
+  <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
 
-          <div className="hidden md:flex gap-7 text-sm font-medium text-muted-foreground">
-            {[
-              ['About', '#about'],
-              ['Flagship Project', '#flagship'],
-              ['Projects', '#projects'],
-              ['Skills', '#skills'],
-              ['Experience', '#experience'],
-              ['Research', '#research'],
-              ['Contact', '#contact'],
-            ].map(([label, href]) => (
-              <a key={href} href={href} className="hover:text-white transition-colors duration-200">
-                {label}
-              </a>
-            ))}
-          </div>
+    {/* LEFT — Fixed logo container */}
+    <div className="w-[320px] flex-shrink-0 overflow-hidden whitespace-nowrap">
+      <KVCLogo />
+    </div>
 
-          <div className="flex items-center gap-5">
-            <a href="https://github.com/chaitanyakolicharamu" target="_blank" rel="noopener noreferrer"
-              className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
-              data-testid="link-github-nav">
-              <Github size={18} />
-            </a>
-            <a href="https://www.linkedin.com/in/venkat017" target="_blank" rel="noopener noreferrer"
-              className="transition-colors duration-200 opacity-60 hover:opacity-100"
-              style={{ color: '#0A66C2' }}
-              data-testid="link-linkedin-nav">
-              <Linkedin size={18} />
-            </a>
-            <a href="https://leetcode.com/u/venkat017/" target="_blank" rel="noopener noreferrer"
-              className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
-              data-testid="link-leetcode-nav">
-              <SiLeetcode size={18} />
-            </a>
-          </div>
-        </div>
-      </nav>
+    {/* CENTER — Stable navigation */}
+    <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex gap-7 text-sm font-medium text-muted-foreground">
+      {[
+        ['About', '#about'],
+        ['Flagship Project', '#flagship'],
+        ['Projects', '#projects'],
+        ['Skills', '#skills'],
+        ['Experience', '#experience'],
+        ['Research', '#research'],
+        ['Contact', '#contact'],
+      ].map(([label, href]) => (
+        <a
+          key={href}
+          href={href}
+          className="hover:text-white transition-colors duration-200"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+
+    {/* RIGHT — Fixed social icons */}
+    <div className="flex-shrink-0 flex items-center gap-5">
+      <a
+        href="https://github.com/chaitanyakolicharamu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
+      >
+        <Github size={18} />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/venkat017"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors duration-200 opacity-60 hover:opacity-100"
+        style={{ color: '#0A66C2' }}
+      >
+        <Linkedin size={18} />
+      </a>
+
+      <a
+        href="https://leetcode.com/u/venkat017/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors duration-200 hover:opacity-100 opacity-60 hover:text-white text-white"
+      >
+        <SiLeetcode size={18} />
+      </a>
+    </div>
+
+  </div>
+</nav>
 
       {/* ── Hero ───────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-16 pb-20 overflow-hidden z-10">
