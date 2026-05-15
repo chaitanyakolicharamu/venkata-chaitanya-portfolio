@@ -1,0 +1,64 @@
+Fix the navbar logo/typewriter animation layout issue. Do not redesign the navbar.
+
+Current problem:
+When the KVC logo types/expands into “Kolicharamu Venkata Chaitanya”, it pushes the navbar links:
+About, Flagship Project, Projects, Skills, Experience, Research, Contact.
+
+This looks bad because the navigation moves while the animation is running.
+
+Required fix:
+- Navbar links must stay completely fixed and stable.
+- Only the KVC/logo area should animate.
+- The animation must never push or shift the nav menu.
+- Use a fixed-width logo container on the left.
+- Keep navbar layout as 3 stable zones:
+  1. Left: animated KVC/name logo container
+  2. Center: navigation links
+  3. Right: social icons
+
+Navbar structure:
+Left logo area:
+KVC typewriter animation only
+
+Center nav area:
+About
+Flagship Project
+Projects
+Skills
+Experience
+Research
+Contact
+
+Right social icons:
+GitHub
+LinkedIn
+LeetCode
+
+Logo animation behavior:
+- Start with: KVC
+- Type letter-by-letter into: Kolicharamu Venkata Chaitanya
+- Pause briefly
+- Delete/collapse back to: KVC
+- Loop smoothly
+
+Important:
+- No arrows
+- No extra symbols
+- No layout shifting
+- No pushing nav links
+- No changing navbar height
+- No overflow into nav links
+- If the full name is too long, reduce font size slightly or fade/clip inside the fixed logo container
+- Use CSS width/min-width/max-width to reserve space for the longest text
+- Keep the separator line optional, but it must not move
+
+Implementation guidance:
+- Wrap logo animation in a fixed-width div, for example 280px–340px desktop.
+- Use overflow hidden if needed.
+- Use flex-shrink-0 for logo area.
+- Center nav links should be absolutely centered or placed in a separate flex container that does not depend on logo width changes.
+- Right icons should stay fixed.
+- Navbar should remain visually stable during the entire typing animation.
+
+Final result:
+The KVC/name animation should look premium, but the navbar links should remain still and aligned at all times.
